@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem com Zoom, Caixas e Botão</title>
+    <style>
+        /* Configuração para a imagem de fundo com ajuste de zoom */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: black;
+            background-size: 300%; /* Ajuste o valor para o "zoom" desejado */
+            flex-direction: column;
+            color: white;
+        }
+
+        /* Estilo para as caixas */
+        .caixa {
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            animation: brilho 1s infinite alternate;
+            display: inline-block;
+            width: auto;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Título acima das caixas */
+        .titulo {
+            font-size: 24px;
+            color: #00ff00;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Estilo para o botão */
+        .botao {
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            color: #00ff00;
+            background-color: transparent;
+            font-size: 18px;
+            cursor: pointer;
+            animation: brilho 1s infinite alternate;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* Efeito de brilho nas bordas */
+        @keyframes brilho {
+            from {
+                box-shadow: 0 0 10px #00ff00;
+            }
+            to {
+                box-shadow: 0 0 20px #00ff00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Título e primeira caixa com texto -->
+    <div class="titulo"></div>
+    <div class="caixa">
+        TEXTO DO MECÂNICO
+    </div>
+
+    <!-- Título e segunda caixa com texto -->
+    <div class="titulo"></div>
+    <div class="caixa">
+       TEXTO DO MECÂNICO
+    </div>
+        <div class="caixa">
+       PARA VOCÊ IR VER SE O SEU CARRO ESTÁ PRONTO APERTE NO BUTÃO ABAIXO COM O NOME PRÓXIMO.
+    </div>
+
+    <!-- Botão para outra página -->
+    <a href="saite.html" class="botao">PRÓXIMO</a>
+</body>
+</html>

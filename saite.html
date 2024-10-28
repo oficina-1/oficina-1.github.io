@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Fundo Preto, Caixa e Brilho</title>
+    <style>
+        /* Configuração do fundo preto */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Estilo para o campo de pesquisa */
+        .pesquisa {
+            padding: 10px;
+            background-color: black;
+            color: #00ff00;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #00ff00;
+            margin-bottom: 20px;
+            outline: none;
+            animation: brilho 1s infinite alternate;
+        }
+
+        /* Estilo para o título */
+        .titulo {
+            font-size: 24px;
+            color: #00ff00;
+            font-weight: bold;
+            text-align: center;
+            animation: brilho 1s infinite alternate;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para a caixa de texto */
+        .caixa {
+            padding: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            animation: brilho 1s infinite alternate;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a caixa de informações */
+        .caixa-informacoes {
+            padding: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            animation: brilho 1s infinite alternate;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a imagem dentro da caixa de informações */
+        .caixa-informacoes img {
+            width: 200px; /* Largura padrão */
+            height: auto;
+            margin-bottom: 10px;
+            transform: scale(1.1); /* Ajuste aqui para 200% de zoom */
+            transition: transform 0.3s; /* Transição suave para o zoom */
+        }
+
+        /* Estilo para o texto destacado */
+        .highlight {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Efeito de brilho nas bordas */
+        @keyframes brilho {
+            from {
+                box-shadow: 0 0 10px #00ff00;
+            }
+            to {
+                box-shadow: 0 0 20px #00ff00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Campo de pesquisa dentro de um formulário -->
+    <form onsubmit="buscarTexto(); return false;">
+        <input type="text" id="pesquisa" class="pesquisa" placeholder="Digite sua pesquisa...">
+    </form>
+
+    <!-- Título acima da caixa -->
+    <div class="titulo">SEJA BEM-VINDO (A)</div>
+
+    <!-- Caixa com o texto -->
+    <div class="caixa" id="caixa1">
+        <p>📑:OLÁ SEJA BEM-VINDO (A) NO SAITE PARA VOCÊ SABER A INFORMAÇÕES DO SEU CARRO LEIA AS INFORMAÇÕES ABAIXO COM ATENÇÃO.</p>
+        <p>⚠️:PESQUISE SEU NOME ACIMA E VEJA AS INFORMAÇÕES DO SEU CARRO.</p>
+        <p>⚠️:SE NAIS INFORMAÇÕES DO SEU CARRO ESTIVER FALANDO QUE SEU CARRO NÃO ESTÁ PRONTO ESPERE.</p>
+        <p>⚠️:PORQUE PODE TER CHEGADO PESSOAS PRIMEIRO DO QUE VOCÊ.</p>
+        <p>🤝:A EMPRESA DE PINTAR CARRO LHE AGRADECER.</p>
+    </div>
+
+    <!-- Caixa de informações com imagem e detalhes -->
+    <div class="caixa-informacoes" id="info1">
+        <!-- Imagem com zoom -->
+        <img src="carro1.png" alt="Imagem" id="imagemZoom">
+        
+        <!-- Informações em lista -->
+        <p>⚠️ATENÇÃO⚠️</p>
+        <p>🔧MECÂNICO: JOSUÉ</p>
+        <p>👤CLIENTE: JADIEL</p>
+        <p>🚧MODELO CARRO: FERRARI
+        <p>📆DATA: 28/10/2024</p>
+        <p>📋INFORMAÇÕES: O CARRO VAI SER PINTADO SÓ AS PORTAS.</p>
+        <p>⚙️PREPARO: O CARRO AINDA NÃO ESTÁ PRONTO NÃO, QUANDO ESTIVER PRONTO VAI APARECER AQUI PARA VOCÊ.</p>
+        <p>🛍️VALOR: 100$</p>
+    </div>
+    <div class="caixa-informacoes" id="info2">
+        <!-- Imagem com zoom -->
+        <img src="carro2.png" alt="Imagem" id="imagemZoom">
+        
+        <!-- Informações em lista -->
+       <p>⚠️ATENÇÃO⚠️</p>
+         <p>🔧MECÂNICO: JOSUÉ</p>
+        <p>👤CLIENTE: JADIEL</p>
+        <p>🚧MODELO CARRO: FERRARI
+        <p>📆DATA: 28/10/2024</p>
+        <p>📋INFORMAÇÕES: O CARRO VAI SER PINTADO SÓ AS PORTAS.</p>
+        <p>⚙️PREPARO: O CARRO AINDA NÃO ESTÁ PRONTO NÃO, QUANDO ESTIVER PRONTO VAI APARECER AQUI PARA VOCÊ.</p>
+        <p>🛍️VALOR: 100$</p>
+    </div>
+
+    <script>
+        // Função para buscar e destacar o texto
+        function buscarTexto() {
+            // Remove os destaques anteriores
+            const caixas = [document.getElementById("info1"),document.getElementById("info2")];
+            caixas.forEach(caixa => {
+                caixa.innerHTML = caixa.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
+            });
+
+            // Pega o termo de pesquisa
+            const termo = document.getElementById("pesquisa").value;
+            if (termo) {
+                // Destaca o novo termo de pesquisa em todas as caixas
+                const regex = new RegExp(termo, "gi");
+                let encontrado = false;
+
+                caixas.forEach(caixa => {
+                    // Destaca o termo e verifica se encontrou
+                    if (caixa.innerHTML.match(regex)) {
+                        caixa.innerHTML = caixa.innerHTML.replace(regex, `<span class="highlight">${termo}</span>`);
+                        // Desce a página até a caixa encontrada
+                        caixa.scrollIntoView({ behavior: "smooth", block: "center" });
+                        encontrado = true;
+
+                        // Para levar até o texto específico
+                        const highlightedText = caixa.querySelector('.highlight');
+                        if (highlightedText) {
+                            highlightedText.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }
+                    }
+                });
+
+                // Se não encontrar o termo, você pode adicionar um alerta ou mensagem
+                if (!encontrado) {
+                    alert("Termo não encontrado.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
